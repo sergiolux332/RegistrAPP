@@ -1,0 +1,60 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <!-- Botón de retroceso -->
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Asistencias</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Asistencias</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <!-- Lista de Asistencias agrupadas por mes -->
+  <ion-list>
+    <!-- Agosto -->
+    <ion-item detail="true" (click)="toggleMonth('agosto')">
+      <ion-label>Agosto</ion-label>
+      <ion-icon [name]="expandedMonths['agosto'] ? 'chevron-up' : 'chevron-down'" slot="end"></ion-icon>
+    </ion-item>
+    <div *ngIf="expandedMonths['agosto']">
+      <ion-item *ngFor="let asistencia of asistenciasAgosto">
+        <ion-label *ngIf="asistencia && asistencia.presente !== undefined">
+          <h2>{{ asistencia.asignatura }}</h2>
+          <p>Fecha: {{ asistencia.fecha }}</p>
+          <p>
+            Estado:
+            <span [ngClass]="asistencia.presente ? 'presente' : 'ausente'">
+              {{ asistencia.presente ? 'Presente' : 'Ausente' }}
+            </span>
+          </p>
+        </ion-label>
+      </ion-item>
+    </div>
+
+    <!-- Septiembre -->
+    <ion-item detail="true" (click)="toggleMonth('septiembre')">
+      <ion-label>Septiembre</ion-label>
+      <ion-icon [name]="expandedMonths['septiembre'] ? 'chevron-up' : 'chevron-down'" slot="end"></ion-icon>
+    </ion-item>
+    <div *ngIf="expandedMonths['septiembre']">
+      <ion-item *ngFor="let asistencia of asistenciasSeptiembre">
+        <ion-label *ngIf="asistencia && asistencia.presente !== undefined">
+          <h2>{{ asistencia.asignatura }}</h2>
+          <p>Fecha: {{ asistencia.fecha }}</p>
+          <p>
+            Estado:
+            <span [ngClass]="asistencia.presente ? 'presente' : 'ausente'">
+              {{ asistencia.presente ? 'Presente' : 'Ausente' }}
+            </span>
+          </p>
+        </ion-label>
+      </ion-item>
+    </div>
+  </ion-list>
+</ion-content>

@@ -25,3 +25,20 @@
 #container a {
   text-decoration: none;
 }
+.content-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%; 
+}
+
+.form-container {
+  width: 100%;
+  max-width: 400px; 
+  text-align: center; 
+}
+
+ion-input {
+  margin: 10px 0; 
+  width: 100%; 
+}
