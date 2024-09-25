@@ -24,13 +24,14 @@ const routes: Routes = [
     path: 'asistencias',
     loadChildren: () => import('./asistencias/asistencias.module').then( m => m.AsistenciasPageModule)
   },
-  {
-    path: 'registro',
-    loadChildren: () => import('./registro/registro.module').then( m => m.RegistroPageModule)
-  },
+    { path: 'registro', loadChildren: () => import('./registro/registro.module').then(m => m.RegistroPageModule) },
   {
     path: 'cambiar',
     loadChildren: () => import('./cambiar/cambiar.module').then( m => m.CambiarPageModule)
+  },
+  {
+    path: 'restaurar',
+    loadChildren: () => import('./restaurar/restaurar.module').then( m => m.RestaurarPageModule)
   },
 ];
 

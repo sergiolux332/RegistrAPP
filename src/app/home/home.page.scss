@@ -42,3 +42,15 @@ ion-input {
   margin: 10px 0; 
   width: 100%; 
 }
+.forgot-email {
+  margin-top: 10px;
+  text-align: center;
+}
+
+.forgot-email a {
+  color: #428bca; /* Azul del enlace */
+  text-decoration: underline;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+

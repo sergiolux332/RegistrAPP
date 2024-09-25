@@ -1,22 +1,50 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-header [translucent]="true">
-      <ion-toolbar>
-        <!-- Botón de retroceso -->
-        <ion-buttons slot="start">
-          <ion-back-button defaultHref="/"></ion-back-button>
-        </ion-buttons>
-        <ion-title>Cambiar Clave</ion-title>
-      </ion-toolbar>
-    </ion-header>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/menu"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Cambiar</ion-title>
   </ion-toolbar>
 </ion-header>
 
+<ion-content [fullscreen]="true" class="ion-padding">
+  <div class="form-container">
+    <h2>Cambiar Clave</h2>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">cambiar</ion-title>
-    </ion-toolbar>
-  </ion-header>
+    <!-- Input para verificar el correo o usuario -->
+    <ion-item>
+      <ion-label position="floating">Correo o Usuario</ion-label>
+      <ion-input
+        type="text"
+        [(ngModel)]="usuario"
+        placeholder="Ingrese su correo o usuario"
+        required
+      ></ion-input>
+    </ion-item>
+
+    <!-- Input para la nueva contraseña -->
+    <ion-item>
+      <ion-label position="floating">Nueva Clave</ion-label>
+      <ion-input
+        type="password"
+        [(ngModel)]="nuevaClave"
+        placeholder="Ingrese la nueva clave"
+        required
+      ></ion-input>
+    </ion-item>
+
+    <!-- Input para verificar la nueva contraseña -->
+    <ion-item>
+      <ion-label position="floating">Verificar Clave</ion-label>
+      <ion-input
+        type="password"
+        [(ngModel)]="verificarClave"
+        placeholder="Vuelva a ingresar la nueva clave"
+        required
+      ></ion-input>
+    </ion-item>
+
+    <!-- Botón para cambiar la clave -->
+    <ion-button expand="full" (click)="cambiar()">Cambiar Clave</ion-button>
+  </div>
 </ion-content>
